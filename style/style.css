@@ -232,6 +232,9 @@ html {
     color: var(--color-tertiary);
     font-family: var(--font-secundary);
 }
+.container__icons{
+    max-width: 100vw;
+}
 
 .icons__skills {
     position: absolute;
