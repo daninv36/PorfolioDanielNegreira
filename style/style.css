@@ -233,27 +233,52 @@ html {
     font-family: var(--font-secundary);
 }
 
-.icons__skills {
-    position: absolute;
-    width: 100vw;
+.icons {
+    width: 100%;
     display: flex;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
     margin-top: 13vh;
-    animation: icons 60s linear infinite;
 }
 
-@keyframes icons {
-    to {
-        right: 10vw;
-    }
+.icons::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    content: " ";
+    z-index: 10;
+}
 
+.icons::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    content: " ";
+    z-index: 10;
+}
+
+.icons__slide {
+    animation: slide 60s infinite linear;
+
+    img {
+        margin: 0 50px;
+    }
+}
+
+@keyframes slide {
     from {
-        right: 100vw;
+        transform: translateX(0);
     }
-}
 
-.skills {
-    width: 10vh;
-    margin-right: 20vh;
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 /* experiencia */
@@ -493,12 +518,12 @@ html {
 }
 
 .footer__p {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .footer__a {
     color: var(--color-primary);
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -533,7 +558,7 @@ html {
 
     .inicio {
         padding: 20vh 0;
-        height: 100vh;
+        height: 100%;
     }
 
     .container__inicio {
@@ -556,6 +581,10 @@ html {
 
     .inicio__cv {
         font-size: 14px;
+    }
+
+    .skills {
+        width: 45px;
     }
 
     /* experiencia */
@@ -643,7 +672,6 @@ html {
     .card {
         flex-direction: column;
         gap: 1rem;
-        box-shadow: 0 0 10px black;
         padding: 1rem;
     }
 
@@ -709,6 +737,10 @@ html {
     .article__icons {
         flex-direction: column;
         justify-content: center;
+    }
+
+    .icons {
+        margin-top: 3vh;
     }
 
     .icons__skills {

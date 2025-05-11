@@ -7,3 +7,9 @@ var rellax = new Rellax('.rellax', {
 //Scrolling
 
 AOS.init();
+
+//Slider
+
+let icons = document.getElementById("slider").cloneNode(true);
+
+document.getElementById("icons").appendChild(icons);
